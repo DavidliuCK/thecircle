@@ -1,37 +1,58 @@
-body {
+/* Grundinställningar */
+html, body {
   margin: 0;
+  padding: 0;
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  height: 100%; /* Säkerställ att sidan tar upp hela höjden */
+  background: linear-gradient(135deg, #e2e2e2, #eaeaea);
   color: #fff;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  overflow: hidden; /* Förhindra scroll */
 }
 
 header {
-  margin-top: 10px; /* Flytta allt högre upp */
+  background-color: #000000e8;
+  color:  rgb(216, 216, 216);
   text-align: center;
+  padding: 10px 0;
 }
 
-h1 {
-  font-size: 2.5rem;
+header h1 {
+  font-size: 1.2rem;
   margin: 0;
 }
 
 #info {
-  display: flex;
-  gap: 20px;
   font-size: 1.2rem;
-  margin: 10px 0;
+  margin: 5px 0;
+}
+
+.game-container {
+  flex: 1; /* Gör att detta fyller ut mellan header och footer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  background-color: #000000de;
+  color: white;
+  text-align: center;
+  padding: 0; /* Ta bort eventuell extra padding */
+  font-family: 'Dancing Script', cursive;
+  font-size: 1rem;
+  height: 40px; /* Specifik höjd för att hålla footern kompakt */
+  display: flex;
+  align-items: center; /* Vertikal centrering */
+  justify-content: center; /* Horisontell centrering */
+  flex-shrink: 0; /* Förhindra att footern krymper */
 }
 
 #start-btn {
   font-size: 1.2rem;
   padding: 10px 20px;
-  background: #fff;
-  color: #ff758c;
+  background: #d74ef2;
+  color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -42,28 +63,26 @@ h1 {
   background: #fce4ec;
 }
 
-/* Cirkeln */
 #circle {
   width: 50px;
   height: 50px;
-  background: #fff;
+  background: hsla(287, 100%, 62%, 0.698);
   border-radius: 50%;
   position: absolute;
   cursor: pointer;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  display: none; /* Dold tills spelet startar */
+  display: none;
 }
 
 #circle:active {
   transform: scale(0.9);
 }
 
-/* Gratulationsanimation */
 .burst {
   position: absolute;
   width: 50px;
   height: 50px;
-  background: radial-gradient(circle, #fff, transparent);
+  background: radial-gradient(circle, #ffffff, transparent);
   border-radius: 50%;
   pointer-events: none;
 }
